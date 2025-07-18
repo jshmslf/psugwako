@@ -3,6 +3,8 @@ import pdfplumber
 import re
 import tempfile
 from flask_cors import CORS
+from flask import send_from_directory
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -137,6 +139,14 @@ def upload():
             })
         else:
             return jsonify({'error': 'No subjects found'}), 400
+        
+@app.route('/')
+def serve_index():
+    return send_from_directory('static', 'index.html')
+
+@app.route('/<path:path>')
+def serve_static_file(path):
+    return send_from_directory('static', path)
 
 if __name__ == '__main__':
     app.run(debug=True)

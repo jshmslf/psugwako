@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.step')[1].classList.add('active');
         continueBtn.classList.add('d-none');
 
-        fetch('http://127.0.0.1:5000/upload', {
+        fetch('/upload', {
             method: 'POST',
             body: formData
         })
