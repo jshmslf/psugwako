@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GWAko</title>
+    <link rel="icon" href="assets/PSULogo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- Logo Section -->
+                <a class="navbar-brand d-flex align-items-center gap-2" href="">
+                    <img src="assets/gwako_logo.png" alt="GWAko logo" />
+                    <span class="logo-text">GWAko</span>
+                </a>
+
+                <!-- Toggler for mobile -->
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse justify-content-end text-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#calculator">Calculator</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="intro-section">
+            <div class="container text-center">
+                <h1 class=" mb-3" data-aos="fade-up">Are You on Track for <br>🎓Honors?</h1>
+                <p class="lead" data-aos="fade-up" data-aos-delay="150">Tired of calculating grades? Upload your PDF and
+                    instantly see your GWA!</p>
+                <button id="start-calc-btn" class="btn btn-lg btn-primary" type="button" data-aos="zoom-in"
+                    data-aos-delay="300">Calculate Now →</button>
+            </div>
+        </section>
+        <section id="calculator" class="upload-section d-none">
+            <div class="container">
+                <div class="progress-steps d-flex justify-content-center gap-5 mb-4">
+                    <div class="step active">1. Upload PDF</div>
+                    <div class="step">2. Result</div>
+                </div>
+
+                <div id="calc-header" class="mb-4">
+                    <h2 class="text-center fw-bold mb-3" data-aos="fade-down">LET'S CALCULATE YOUR GWA!</h2>
+                </div>
+
+                <div id="drop-zone" class="drop-zone text-center p-5 rounded-1">
+                    <div id="upload-placeholder">
+                        <p class="mb-0">
+                            Drag and drop your PDF here or browse
+                        </p>
+                    </div>
+
+                    <div id="uploaded-file" class="d-none mt-3">
+                        <i class="fas fa-file-pdf fa-3x text-danger"></i>
+                        <p id="file-name" class="mt-2 mb-1"></p>
+                        <button id="remove-file" class="btn btn-sm btn-outline-danger">Remove</button>
+                    </div>
+
+                    <input type="file" id="fileUpload" accept="application/pdf" hidden />
+                </div>
+                <button id="continue-btn" class="btn btn-lg btn-primary" type="button">Continue</button>
+
+
+                <div id="upload-error" class="text-danger mt-2 d-none">
+                    Please upload a PDF file before continuing.
+                </div>
+                <!-- Result Output -->
+                <div id="result-section" class="d-none mt-5 text-center">
+                    <h3 class="rslt fw-bold mb-3">Your Result</h3>
+                    <div id="gwa-result" class="fw-semibold mb-3"></div>
+                    <button id="reupload-btn" class="btn btn-outline-secondary">Upload Another PDF</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="fw-bold text-center mb-4">About This Website</h2>
+            <div class="about-section text-center fs-5">
+                <p>
+                    This <bold>GWAKo</bold> is a General Weighted Average (GWA) acalculator designed to help Pangasinan
+                    State
+                    University (PSU) students estimate their
+                    GWA based on their academic records.
+                </p>
+                <p>
+                    The system analyzes the grades directly from a PDF copy of your transcript or grade report — no need
+                    to manually input
+                    your subjects. It automatically computes your GWA while excluding non-academic subjects like PE and
+                    NSTP.
+                </p>
+                <p>
+                    Honor eligibility (Summa Cum Laude, Magna Cum Laude, Cum Laude, and With Academic Distinction) is
+                    also evaluated using PSU’s
+                    official rules
+                    and standards.
+                </p>
+                <p>
+                    The computation logic and Latin Honor qualification rules are based on the <bold>PSU Student's
+                        Handbook.</bold>
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-muted py-3">
+        &copy; 2025 | by <span class="sb">jshmlf</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="src/script.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

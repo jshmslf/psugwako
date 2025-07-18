@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-primary: #3D8BFF;
+    --color-white: #FFFFFF;
+    --color-bg: #EDEDED;
+}
+
+* {
+    font-family: 'Montserrat';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper {
+    flex: 1
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-left: 1rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #1D4ED8;
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+nav img {
+    width: 50px;
+    transform: rotate(-20deg);
+}
+
+.btn {
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 1rem;
+    border-radius: 30px;
+    font-weight: 600;
+    padding: 0.3rem 1.4rem 0.3rem 1.4rem;
+    margin-top: 1.5rem;
+    border: none;
+    outline: none;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+}
+
+.mb-3 {
+    font-weight: 800;
+    font-size: 3.5rem;
+}
+
+.intro-section {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+/* UPLOAD PART */
+
+.upload-section {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.drop-zone {
+    background-color: #3d8bff18;
+    border: 0.2rem dashed var(--color-primary);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.drop-zone.dragover {
+    background-color: #e0efff;
+}
+
+.progress-steps .step {
+    font-weight: 600;
+    color: #bbb;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.5rem;
+}
+
+.progress-steps .step.active {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.rslt_msg,
+.rslt_err {
+    font-size: 2rem;
+    display: inline-block;
+    line-height: 1.4;
+}
+
+.rslt {
+    margin-top: -1.5rem;
+    font-size: 3rem;
+}
+
+.rslt_rsn {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #525252;
+}
+
+strong {
+    color: var(--color-primary);
+}
+
+.about-section p {
+    padding-left: 10rem;
+    padding-right: 10rem;
+    font-size: 1.3rem;
+}
+
+.about-section bold {
+    font-weight: 600;
+}
+
+.sb {
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    body {
+        min-height: 85vh;
+    }
+
+    .intro-section,
+    .upload-section,
+    .about-section {
+        padding: 2rem 1rem;
+    }
+
+    nav img {
+        width: 30px;
+    }
+
+    .logo-text {
+        font-size: 1.4rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.5rem;
+    }
+
+    .navbar-toggler {
+        border: none;
+    }
+
+    .navbar-toggler,
+    .navbar-toggler:focus-visible {
+        outline: none !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+
+    .navbar-nav .nav-link {
+        padding-right: 1rem;
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .mb-3 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .rslt_msg,
+    .rslt_err {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+
+    .rslt_rsn {
+        font-size: 1rem;
+    }
+
+    /* About section paragraphs */
+    .about-section p {
+        padding: 0 1rem;
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    /* Button size on mobile */
+    .btn {
+        font-size: 0.95rem;
+        padding: 0.4rem 1.2rem;
+    }
+
+    h1 {
+        margin-top: 2rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+
+    footer {
+        font-size: 0.7rem;
+    }
+
+    .about-section {
+        margin-top: -2rem;
+    }
+}
