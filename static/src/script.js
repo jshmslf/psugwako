@@ -163,6 +163,14 @@ document.addEventListener('DOMContentLoaded', function () {
         continueBtn.classList.remove('d-none');
     });
 
+    const toggleSampleBtn = document.getElementById('toggle-sample-btn');
+    const sampleImage = document.getElementById('sample-pdf-image');
+
+    toggleSampleBtn?.addEventListener('click', () => {
+        sampleImage.classList.toggle('d-none');
+        toggleSampleBtn.textContent = sampleImage.classList.contains('d-none') ? 'View Sample PDF' : 'Hide Sample PDF';
+    });
+
 });
 
 

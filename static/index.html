@@ -53,11 +53,13 @@
                 <h1 class=" mb-3" data-aos="fade-up">Are You on Track for <br>🎓Honors?</h1>
                 <p class="lead" data-aos="fade-up" data-aos-delay="150">Tired of calculating grades? Upload your PDF and
                     instantly see your GWA!</p>
+                <p class="lead2" data-aos="fade-up" data-aos-delay="200">Exclusive for PSU students only</p>
                 <button id="start-calc-btn" class="btn btn-lg btn-primary" type="button" data-aos="zoom-in"
                     data-aos-delay="300">Calculate Now →</button>
             </div>
         </section>
-        <section id="calculator" class="upload-section d-none">
+
+        <section id="calculator" class="upload-section">
             <div class="container">
                 <div class="progress-steps d-flex justify-content-center gap-5 mb-4">
                     <div class="step active">1. Upload PDF</div>
@@ -85,11 +87,40 @@
                 </div>
                 <button id="continue-btn" class="btn btn-lg btn-primary" type="button">Continue</button>
 
-
                 <div id="upload-error" class="text-danger mt-2 d-none">
                     Please upload a PDF file before continuing.
                 </div>
+
+                <div class="text-center mt-4">
+                    <button type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                        data-bs-target="#samplePDFModal">
+                        View Sample PDF
+                    </button>
+                </div>
+
+                <div class="modal fade" id="samplePDFModal" tabindex="-1" aria-labelledby="samplePDFModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg fade-up-modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-semibold" id="samplePDFModalLabel">Sample PDF Format</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <img src="assets/sample.png" alt="Sample PDF Format" class="img-fluid rounded shadow">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
                 <!-- Result Output -->
+                <div id="progress-container" class="progress my-3 d-none" style="height: 20px;">
+                    <div id="upload-progress" class="progress-bar progress-bar-striped progress-bar-animated"
+                        role="progressbar" style="width: 0%">0%</div>
+                </div>
                 <div id="result-section" class="d-none mt-5 text-center">
                     <h3 class="rslt fw-bold mb-3">Your Result</h3>
                     <div id="gwa-result" class="fw-semibold mb-3"></div>
@@ -100,16 +131,16 @@
         </section>
 
         <section id="about">
-            <h2 class="fw-bold text-center mb-4">About This Website</h2>
+            <h2 class="fw-bold text-center mb-4">About</h2>
             <div class="about-section text-center fs-5">
                 <p>
-                    This <bold>GWAKo</bold> is a General Weighted Average (GWA) acalculator designed to help Pangasinan
+                    This <bold>GWAKo</bold> is a General Weighted Average (GWA) calculator designed to help Pangasinan
                     State
-                    University (PSU) students estimate their
+                    University (PSU) students, specially those graduating students, estimate their
                     GWA based on their academic records.
                 </p>
                 <p>
-                    The system analyzes the grades directly from a PDF copy of your transcript or grade report — no need
+                    The system analyzes the grades directly from a PDF copy of your transcript or grade report, no need
                     to manually input
                     your subjects. It automatically computes your GWA while excluding non-academic subjects like PE and
                     NSTP.
@@ -137,7 +168,6 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
     <script src="src/script.js"></script>
-    <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init();
